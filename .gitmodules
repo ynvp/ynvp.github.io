@@ -2,3 +2,6 @@
 	path = themes/poison
 	url = https://github.com/lukeorth/poison
 
+[submodule "themes/hugo-cat"]
+	path = themes/hugo-cat
+	url = https://github.com/ynvp/hugo-cat.git
