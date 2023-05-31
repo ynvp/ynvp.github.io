@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" type="image/x-icon" href="/">
+    
+    <link rel="stylesheet" href="/css/style.min.1dac2dce58058802a69e8c1e3ae7a2820fa9411cff0cded4211b8a1403b3b8327c23f39304b5650b1ffe9b747ea64029f9c811425cf1ffa0eb081ab9ccec871b.css" integrity="sha512-HawtzlgFiAKmnoweOueigg&#43;pQRz/DN7UIRuKFAOzuDJ8I/OTBLVlCx/&#43;m3R&#43;pkAp&#43;cgRQlzx/6DrCBq5zOyHGw==" crossorigin="anonymous"> 
+    
+
+</head>
+
+<title>
+    
+     Palindrome Number | Pradeep Yendluri - Blog
+   
+</title> 
+
+<body> 
+<header>
+     <div class="cat">
+      <h1><a href="/">Pradeep Yendluri - Blog</a></h1>
+     
+      <ul class="header-link">
+        
+      </ul>
+    </div>
+</header>
+<div id="content">
+
+<div class="container">
+		<article>
+			<h1 class="head-blog">Palindrome Number</h1>
+			<div class="time">May 27, 2023</div>
+			<div>
+				<p>  <p class="md-image">
+  <img src="/palindrome/palindrome_banner.png" alt="Palindrome Banner"  />
+  </p>
+</p>
+<p><em>Given - number n.</em></p>
+<p>Return - n is palindrome or not.</p>
+<h3 id="steps">Steps</h3>
+<ol>
+<li>Create a temporary variable to store the incoming number for later.</li>
+<li>Create a variable to store the reconstructed reverse of the given number and initialize it to 0.</li>
+<li>We take the idea of dividing (%) a number by 10 that gives the units digit as remainder. (Main step to remember while answering problems like this)</li>
+<li>So, we keep a condition in while loop that number must not be 0.</li>
+<li>In while loop we take a temporary variable to store the unit&rsquo;s digit of the given number (this will be updated at end of loop)</li>
+<li>Now use the temp var like below</li>
+<li>reverseNumber = reverseNumber * 10 + temporaryVariable</li>
+<li>At the end of loop we divide the given number n / 10 and update it to n, i.e n = n/10. We do this until we reach 0 and exit the loop.</li>
+<li>After that we can check whether the reverseNumber == n to return boolean value.</li>
+</ol>
+<p>  <p class="md-image">
+  <img src="/palindrome/palindrome_number.png" alt="Palindrome Explanation"  />
+  </p>
+</p>
+<h3 id="java-implementation">Java Implementation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Java Implementation
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isPalindrome</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> x<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> reverseNumber <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>x <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>x <span style="color:#f92672">!=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> zeroUnitDigit <span style="color:#f92672">=</span> x <span style="color:#f92672">%</span> 10<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            reverseNumber <span style="color:#f92672">=</span> reverseNumber <span style="color:#f92672">*</span> 10 <span style="color:#f92672">+</span> zeroUnitDigit<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            x <span style="color:#f92672">=</span> x <span style="color:#f92672">/</span> 10<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>reverseNumber <span style="color:#f92672">==</span> temp<span style="color:#f92672">)</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
+			</div>
+
+		</article>
+	</div>
+	<div class="blog container">
+   <div class="head-blog">
+    <h3>Related article</h3>
+   </div>
+<ul class="article-list">
+
+ </ul>
+</div>
+
+
+</div>
+<footer class="footer">
+    <p><a href="https://gohugo.io">Hugo Cat</a></p>
+    <p>Forkme on <a href="https://github.com/httpsecure/hugo-cat">Github</a></p>
+</footer>
+
+
+</body>
+</html>

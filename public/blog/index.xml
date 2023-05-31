@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pradeep Yendluri - Blog</title>
-    <link>/</link>
-    <description>Recent content on Pradeep Yendluri - Blog</description>
+    <title>Blogs on Pradeep Yendluri - Blog</title>
+    <link>/blog/</link>
+    <description>Recent content in Blogs on Pradeep Yendluri - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 May 2023 02:15:01 -0500</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 02:15:01 -0500</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Find the Index of the First Occurrence in a String</title>
       <link>/blog/find-the-index-of-the-first-occurrence-in-a-string/</link>

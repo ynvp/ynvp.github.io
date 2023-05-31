@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pradeep Yendluri - Blog</title>
-    <link>/</link>
-    <description>Recent content on Pradeep Yendluri - Blog</description>
+    <title>Posts on Pradeep Yendluri - Blog</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Pradeep Yendluri - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 May 2023 02:15:01 -0500</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 02:15:01 -0500</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Find the Index of the First Occurrence in a String</title>
-      <link>/blog/find-the-index-of-the-first-occurrence-in-a-string/</link>
+      <link>/posts/find-the-index-of-the-first-occurrence-in-a-string/</link>
       <pubDate>Sat, 27 May 2023 02:15:01 -0500</pubDate>
       
-      <guid>/blog/find-the-index-of-the-first-occurrence-in-a-string/</guid>
+      <guid>/posts/find-the-index-of-the-first-occurrence-in-a-string/</guid>
       <description>Given 2 strings - haystack and needle.
 Problem statement Find the index of needle substring if present in haystack and return starting index of the first occurrence, else return -1.
 Intuition: Use Window Sliding technique Idea is to iterate from 0 till length of haystack - length of needle, this will help us not to overrun the last index.
@@ -21,10 +21,10 @@ Algorithm function find_occurence{ loop i: 0 to haystack.length-needle.length{ h
     
     <item>
       <title>Palindrome Number</title>
-      <link>/blog/palindrome-number/</link>
+      <link>/posts/palindrome-number/</link>
       <pubDate>Sat, 27 May 2023 01:52:00 -0500</pubDate>
       
-      <guid>/blog/palindrome-number/</guid>
+      <guid>/posts/palindrome-number/</guid>
       <description>Given - number n.
 Return - n is palindrome or not.
 Steps Create a temporary variable to store the incoming number for later. Create a variable to store the reconstructed reverse of the given number and initialize it to 0. We take the idea of dividing (%) a number by 10 that gives the units digit as remainder. (Main step to remember while answering problems like this) So, we keep a condition in while loop that number must not be 0.</description>

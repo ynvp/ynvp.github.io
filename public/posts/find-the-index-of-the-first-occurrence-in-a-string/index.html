@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" type="image/x-icon" href="/">
+    
+    <link rel="stylesheet" href="/css/style.min.1dac2dce58058802a69e8c1e3ae7a2820fa9411cff0cded4211b8a1403b3b8327c23f39304b5650b1ffe9b747ea64029f9c811425cf1ffa0eb081ab9ccec871b.css" integrity="sha512-HawtzlgFiAKmnoweOueigg&#43;pQRz/DN7UIRuKFAOzuDJ8I/OTBLVlCx/&#43;m3R&#43;pkAp&#43;cgRQlzx/6DrCBq5zOyHGw==" crossorigin="anonymous"> 
+    
+
+</head>
+
+<title>
+    
+     Find the Index of the First Occurrence in a String | Pradeep Yendluri - Blog
+   
+</title> 
+
+<body> 
+<header>
+     <div class="cat">
+      <h1><a href="/">Pradeep Yendluri - Blog</a></h1>
+     
+      <ul class="header-link">
+        
+      </ul>
+    </div>
+</header>
+<div id="content">
+
+<div class="container">
+		<article>
+			<h1 class="head-blog">Find the Index of the First Occurrence in a String</h1>
+			<div class="time">May 27, 2023</div>
+			<div>
+				<p><em>Given 2 strings - haystack and needle.</em></p>
+<h3 id="problem-statement">Problem statement</h3>
+<p>Find the index of needle substring if present in haystack and return starting index of the first occurrence, else return -1.</p>
+<h3 id="intuition-use-window-sliding-technique">Intuition: Use Window Sliding technique</h3>
+<p>Idea is to iterate from 0 till length of haystack - length of needle, this will help us not to overrun the last index.</p>
+<h3 id="algorithm">Algorithm</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>function find_occurence<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    loop i<span style="color:#f92672">:</span> 0 to haystack<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">-</span>needle<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        haystack<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> i<span style="color:#f92672">+</span>needle<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">)</span> <span style="color:#f92672">==</span> needle
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> index
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="example">Example:</h3>
+<p><strong>haystack</strong>: hadel, <strong>needle</strong>: ade</p>
+<p><strong>In first iteration,</strong></p>
+<ul>
+<li>haystack substring from 0, 0+3 is had.</li>
+<li>checking had equal to ade</li>
+<li>not equal going to next iteration.</li>
+</ul>
+<p><strong>In second iteration,</strong></p>
+<ul>
+<li>haystack substring from 1, 1+3 is ade</li>
+<li>checking ade equals to ade</li>
+<li>true, return index i i.e., 1</li>
+</ul>
+<h3 id="java-implementation">Java Implementation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">strStr</span><span style="color:#f92672">(</span>String haystack<span style="color:#f92672">,</span> String needle<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// taking lengths of both the given strings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> ln <span style="color:#f92672">=</span> needle<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> lh <span style="color:#f92672">=</span> haystack<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> lh <span style="color:#f92672">-</span> ln<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// checking if substring of haystack of size needle string from
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#75715e">// current index to the needle string.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>haystack<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> ln<span style="color:#f92672">).</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>needle<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// we found needle string in haystack, we&#39;ll return index i
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">// to save time and computation, since we only need index of 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">// first occurence.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Finally we return -1 since we haven&#39;t found needle in haystack :)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
+			</div>
+
+		</article>
+	</div>
+	<div class="blog container">
+   <div class="head-blog">
+    <h3>Related article</h3>
+   </div>
+<ul class="article-list">
+
+ </ul>
+</div>
+
+
+</div>
+<footer class="footer">
+    <p><a href="https://gohugo.io">Hugo Cat</a></p>
+    <p>Forkme on <a href="https://github.com/httpsecure/hugo-cat">Github</a></p>
+</footer>
+
+
+</body>
+</html>
